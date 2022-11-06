@@ -12,16 +12,18 @@
     "default_icon": "img/logo.png",
     "default_popup": "popup.html"
   },
+  "background": {
+    "scripts": ["/js/background.js"],
+    "persistent": false
+  },
   "permissions": [
     "storage",
-    "notifications",
-    "contextMenus",
-    "tts"
+    "tabs"
   ],
   "content_scripts": [{
-    "matches": ["https://www.baidu.com/", "http://www.baidu.com/"],
-    "js": ["./test.js"],
+    "matches": ["<all_urls>"],
     "css": ["./css/custom-style.css"],
+    "js": ["js/jquery.js", "js/content.js"],
     "run_at": "document_idle"
   }],
   "chrome_url_overrides": {
